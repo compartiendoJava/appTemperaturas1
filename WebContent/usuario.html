@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
+</head>
+
+<body onload="nombre();">
+
+
+
+
+<header>
+  <img src="img/iot.png" id="imgHeader">
+  <div id="divNombre"></div>
+  <div id="fecha"></div>
+  
+</header>
+<nav class="navbar navbar-inverse" id="nav">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">Usuario</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="toMenu">Home</a></li>
+        <li><a href="toAgregar">Agregar Temp</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Graficos <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="toGraficoBarras">Grafico Barras</a></li>
+            <li><a href="toGraficoLinea">Grafico Lineas</a></li>
+            <li><a href="toGraficoEntreFechas">Grafico Entre Fechas</a></li>
+          </ul>
+          
+       
+        
+        <li><a href="toTodas">Todas las mediciones</a></li>
+        <li><a href="toInformacion">Informacion general</a></li>
+        <li><a href="toconfiguracion">Configurar temperatura</a></li>
+        
+      </ul>
+      
+    </div>
+  </nav>
+  
+    <div ng-app="usuarioApp" ng-controller="usuarioController" class="container">
+      <div class="input-group" style="width:20%">
+    
+        
+               Introduce El IdUsuario:<input type="text" ng-model="idUsuario" class="form-control"></br></br></br></br>
+               
+               
+                    <input type="button" ng-click="mostrar();" value="enviar"></br></br>
+
+              Visualizar todos los Usuarios:</br></br>
+                    <input type="button" ng-click="todos();" value="enviar">
+           
+        <div ng-show="DtoUsuario">
+                    Nombre:{{DtoUsuario.nombre}}</br>
+                    Password:{{DtoUsuario.password}}</br>
+                    Email:{{DtoUsuario.email}}
+                  </div>
+        </div>
+        <table ng-show="lista" border="2px" class="table table-striped" id="tablaUsuarios">
+          <thead>
+            <tr><th>IdUsuario</th>
+                <th>Nombre</th>
+                <th>Password</th>
+                <th>Email</th>                   
+            </tr>
+        </thead>					
+          <tr ng-repeat="usuario in lista">
+         <td> {{usuario.idUsuario}}</td> 
+         <td> {{usuario.nombre}}</td> 
+         <td> {{usuario.password}}</td> 
+         <td>{{usuario.email}}</td> 
+         <td><input type="button" ng-click="eliminar(usuario.idUsuario);"value="eliminar"></td> 
+        </tr>
+        </table>
+</div>
+      <script>
+        	var app=angular.module("usuarioApp",[]);
+          app.controller("usuarioController",function($scope,$http){
+          
+            $scope.mostrar=function() {	
+            let url = "doUsuario";
+            //let url = "http://localhost:7000/shoteles/hoteles";
+            $http.get(url,{params:{idUsuario:$scope.idUsuario}}).then(function(res){
+              $scope.DtoUsuario=res.data;
+                    
+            });
+            }
+            $scope.todos=function() {	           
+            let url = "doTodos";
+            //let url = "http://localhost:7000/shoteles/hoteles";
+            $http.get(url).then(function(res){
+              $scope.lista=res.data;
+                    
+            });
+            }
+            $scope.eliminar=function(idUsuario) {	
+            let url = "doEliminar";
+            //let url = "http://localhost:7000/shoteles/hoteles";
+            $http.get(url,{params:{idUsuario:idUsuario}}).then(function(res){
+              $scope.lista=res.data;
+                    
+            });
+            }
+            }
+          
+        );
+      
+      </script>
+      <script  src="js/fecha.js"></script>
+      <script  src="js/nombre.js"></script>
+      
+
+  
+    
+    
+  
+  </div>
+  </body>
+</html>

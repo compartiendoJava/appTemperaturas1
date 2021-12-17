@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body onload="nombre();">
+    <header>
+        <img src="img/iot.png" id="imgHeader">
+        <div id="divNombre"></div>
+        <div id="fecha"></div>
+
+    </header>
+
+    <nav id="menu">
+
+
+        <ul>
+
+            <li><a href="toAgregar">Agregar Parametros</a></li>
+            <li>
+                <a href="#">Graficos</a>
+                <ul>
+                    <li>
+                        <a href="toGraficoBarras">Grafico Barras</a>
+                    </li>
+                    <li>
+                        <a href="toGraficoLinea">Grafico Lineas</a>
+                    </li>
+                    <li>
+                        <a href="toGraficoEntreFechas">Grafico Fechas</a>
+                    </li>
+                    <li>
+                        <a href="toTodosTusGraficos">Todos tus Graficos</a>
+                    </li>
+
+                </ul>
+            <li>
+
+
+            <li><a href="toTodas">Todas las mediciones</a></li>
+            <li><a href="toInformacion">Informacion general</a></li>
+            <li><a href="toconfiguracion">Configurar Parametros</a></li>
+            <li><a href="toContacto">Contacto</a></li>
+
+        </ul>
+
+        <div class="clearfix"></div>
+    </nav>
+    <div id="contacto">
+        <form action="doContacto" method="POST">
+            <div class="row">
+                <label class="required" for="nombre">Nombre:</label><br />
+                <input class="input" name="nombre" type="text" size="30" /><br />
+
+            </div></br></br>
+            <div class="row">
+                <label class="required" for="email">Email:</label><br />
+                <input class="input" name="email" type="text" size="30" /><br />
+
+            </div></br></br>
+            <div class="row">
+                <label class="required" for="mensaje">Mensage:</label><br />
+                <textarea class="input" name="mensaje" rows="7" cols="30"></textarea><br />
+
+            </div></br></br>
+
+            <input type="submit" value="Send email" />
+        </form>
+    </div>
+    <script src="js/fecha.js"></script>
+    <script src="js/nombre.js"></script>
+</body>
+
+</html>

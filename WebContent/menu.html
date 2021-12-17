@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert title here</title>
+  <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+<body onload="nombre();">
+  <header>
+    <img src="img/iot.png" id="imgHeader">
+    <div id="divNombre"></div>
+    <div id="fecha"></div>
+
+  </header>
+  <nav id="menu">
+
+
+    <ul>
+
+      <li><a href="toAgregar">Agregar Parametros</a></li>
+      <li>
+        <a href="#">Graficos</a>
+        <ul>
+          <li>
+            <a href="toGraficoBarras">Grafico Barras</a>
+          </li>
+          <li>
+            <a href="toGraficoLinea">Grafico Lineas</a>
+          </li>
+          <li>
+            <a href="toGraficoEntreFechas">Grafico Fechas</a>
+          </li>
+          <li>
+            <a href="toTodosTusGraficos">Todos tus Graficos</a>
+          </li>
+
+        </ul>
+      <li>
+
+
+      <li><a href="toTodas">Todas las mediciones</a></li>
+      <li><a href="toInformacion">Informacion general</a></li>
+      <li><a href="toconfiguracion">Configurar de Parametros</a></li>
+      <li><a href="toContacto">Contacto</a></li>
+
+    </ul>
+
+    <div class="clearfix"></div>
+  </nav>
+
+
+  <script src="js/fecha.js"></script>
+  <script src="js/nombre.js"></script>
+  <script src="js/scriptManager.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>

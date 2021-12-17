@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="ISO-8859-1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insert title here</title>
+  <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+
+<body>
+  <header>
+    <img src="img/iot.png" id="imgHeader">
+        <div id="divNombre"></div>
+        <div id="fecha"></div>
+
+  </header>
+
+  <nav id="menu">
+
+
+    <ul>
+
+      <li><a href="toAgregar">Agregar Parametros</a></li>
+      <li>
+        <a href="#">Graficos</a>
+        <ul>
+          <li>
+            <a href="toGraficoBarras">Grafico Barras</a>
+          </li>
+          <li>
+            <a href="toGraficoLinea">Grafico Lineas</a>
+          </li>
+          <li>
+            <a href="toGraficoEntreFechas">Grafico Fechas</a>
+          </li>
+          <li>
+            <a href="toTodosTusGraficos">Todos tus Graficos</a>
+          </li>
+
+        </ul>
+      <li>
+
+
+      <li><a href="toTodas">Todas las mediciones</a></li>
+      <li><a href="toInformacion">Informacion general</a></li>
+      <li><a href="toconfiguracion">Configurar Parametros</a></li>
+      <li><a href="toContacto">Contacto</a></li>
+
+    </ul>
+
+    <div class="clearfix"></div>
+  </nav>
+
+  </div>
+
+
+  <div class="wrapper" id="canvasFechas">
+
+
+  </div>
+
+
+  <div id="fechasGraficos">
+
+    <label>Fecha inicio</label></br></br>
+    <input type="datetime-local" name="fecha1" style="width: 100%" id="fecha1" /></br></br>
+    <label>Fecha Fin </label></br></br>
+    <input type="datetime-local" name="fecha2" style="width: 100%" id="fecha2" /></br></br>
+
+
+    <button type="button" class="btn btn-default btn-primary" style="width:70%"
+      id="ConsultarFechas">Consultar</button></br></br></br></br>
+
+  </div>
+
+
+
+
+
+
+  <script src="js/fecha.js"></script>
+  <script src="js/ScriptManagerFecha.js"></script>
+
+
+
+
+</body>
+
+
+
+</html>
