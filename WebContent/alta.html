@@ -3,7 +3,7 @@
 	
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/stilo.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -17,19 +17,50 @@
 		<img src="img/iot.png" id="imgHeader">
 		<div id="fecha"></div>
 	</header>
+	<nav class="navbar navbar-inverse" id="navInicio">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+	
+		  </div>
+	
+		  <ul class="nav navbar-nav navbar-right">
+			<li><a href="toAlta"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	
+			<li><a href="tologing"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	
+		  </ul>
+		</div>
+	  </nav>
+
+
+		
+			  
+	
+	
+		 
+	
+		
 	<div class="container">
 	<fieldset>
 	<legend>Alta Usuario</legend>
 		
 			<form action="doAlta" method="POST">
 			<label for="nombre"><span class="glyphicon glyphicon-user"></span>Nombre</label><br>
-			<input type="text" name="nombre" required="required" class="form-control" style="width:30%" id="nombre"placeholder="Nombre"><br>
-            <label for="password"  ><i class="glyphicon glyphicon-lock"></i> Password</label><br>			
-			<input type="password" name="password" required="required" class="form-control" style="width:30%" id="password"placeholder="password"><br>
-			<label for="email"><span class="glyphicon glyphicon-envelope"></span>Email</label><br>
-			
-			<input type="text" name="email" required="required" class="form-control" style="width:30%" id="email" placeholder="email"><br>		
+			<input type="text" name="nombre" required="required" class="form-control" style="width:40%" id="nombre"placeholder="Nombre"><br>
+			<label for="Primer Apelllido"><span class="glyphicon glyphicon-user"></span>Primer Apelllido</label><br>
+			<input type="text" name="PrimerApelllido" required="required" class="form-control" style="width:40%" id="nombre"placeholder="Primer Apelllido"><br>
+			<label for="segundoApelllido"><span class="glyphicon glyphicon-user"></span>Segundo Apelllido</label><br>
+			<input type="text" name="segundoApelllido" required="required" class="form-control" style="width:40%" id="nombre"placeholder="Segundo Apelllido"><br>
+			<label for="institucion"><span class="glyphicon  glyphicon-pencil"></span>Colegio/Institucion</label><br>
+			<input type="text" name="institucion" required="required" class="form-control" style="width:40%" id="nombre"placeholder="Colegio/Institucion"><br>           
+			<label for="email"><span class="glyphicon glyphicon-envelope"></span>Email</label><br>	
+			<input type="text" name="email" required="required" class="form-control" style="width:40%" id="email" placeholder="email"><br>
+			<label for="password"  ><i class="glyphicon glyphicon-lock"></i> Password</label><br>			
+			<input type="password" name="password" required="required" class="form-control" style="width:40%" id="password"placeholder="Password"><br>
+			<label for="password2"  ><i class="glyphicon glyphicon-lock"></i>Repetir Password</label><br>			
+			<input type="password" name="password2" required="required" class="form-control" style="width:40%" id="password"placeholder="Repetir Password"><br>		
 			<input type="submit" value="Guardar" id="enviarMail">
+			
 			
 			
 			
